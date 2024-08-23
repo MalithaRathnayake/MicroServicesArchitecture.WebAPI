@@ -1,10 +1,10 @@
-﻿using KooBits.Domain.Models;
-using KooBits.Infrastructure.Data;
+﻿using KooBits.MicroServices.OrderServices.Interfaces;
+using KooBits.MicroServices.OrderServices.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace KooBits.Infrastructure.Repositories
+namespace KooBits.MicroServices.OrderServices.Infrastructure.Repositories
 {
-    public class OrderRepository: IOrderRepository
+    public class OrderRepository : IOrderRepository
     {
         private readonly OrderDBContext _context;
 
@@ -12,7 +12,7 @@ namespace KooBits.Infrastructure.Repositories
         {
             _context = context;
         }
-          
+
         public async Task<Order> GetOrderByIdAsync(int id)
         {
             return await _context.Orders.FindAsync(id);

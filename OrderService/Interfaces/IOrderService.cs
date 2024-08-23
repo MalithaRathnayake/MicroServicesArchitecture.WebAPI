@@ -1,6 +1,6 @@
-﻿using KooBits.Domain.Models;
+﻿using KooBits.MicroServices.OrderServices.Models;
 
-namespace KooBits.Application.Interfaces
+namespace KooBits.MicroServices.OrderServices.Interfaces
 {
     public interface IOrderService
     {

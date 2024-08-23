@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KooBits.Domain.Models
+﻿namespace KooBits.MicroServices.OrderServices.Models
 {
     public class Order
     {

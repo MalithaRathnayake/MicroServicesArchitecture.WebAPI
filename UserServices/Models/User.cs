@@ -1,4 +1,4 @@
-﻿namespace KooBits.Domain.Models
+﻿namespace KooBits.MicroServices.UserServices.Models
 {
     public class User
     {

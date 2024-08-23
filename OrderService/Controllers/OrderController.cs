@@ -1,20 +1,22 @@
-﻿using KooBits.Application.Interfaces;
-using KooBits.Domain.Models;
-using Microsoft.AspNetCore.Http;
+﻿using KooBits.MicroServices.OrderServices.Interfaces;
+using KooBits.MicroServices.OrderServices.Models;
+using KooBits.MicroServices.OrderServices.Services;
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Http;
+using System.Data;
 
-namespace KooBits.OrderServiceApi.Controllers
+namespace KooBits.MicroServices.OrderService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class OrderController : ControllerBase
     {
         private readonly IOrderService _orderService;
+        private readonly ILogger<IOrderService> _logger;
 
-        public OrderController(IOrderService orderService)
+        public OrderController(IOrderService orderService, ILogger<IOrderService> logger)
         {
-            _orderService = orderService; 
+            _orderService = orderService;
+            _logger = logger;
         }
 
         [HttpGet]
@@ -38,8 +40,21 @@ namespace KooBits.OrderServiceApi.Controllers
         [HttpPost]
         public async Task<ActionResult<Order>> PostOrder(Order order)
         {
-            await _orderService.AddOrderAsync(order);
-            return CreatedAtAction(nameof(GetOrder), new { id = order.OrderID }, order);
+            try
+            {
+                await _orderService.AddOrderAsync(order);
+                return CreatedAtAction(nameof(GetOrder), new { id = order.OrderID }, order);
+            }            
+            catch(InvalidOperationException ex)
+            {
+                _logger.LogError(ex, "Invalid User ID.");
+                return StatusCode(401, "Invalid User ID.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while retrieving books.");
+                return StatusCode(500, "An unexpected error occurred.");
+            }
         }
     }
 }

@@ -1,10 +1,8 @@
-﻿using KooBits.Application.Interfaces;
-using KooBits.Domain.Models;
-using KooBits.Infrastructure.Data;
-using Microsoft.AspNetCore.Http;
+﻿using KooBits.MicroServices.UserServices.Interfaces;
+using KooBits.MicroServices.UserServices.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore; 
-namespace UserServices.Controllers
+
+namespace KooBits.MicroServices.UserServices.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

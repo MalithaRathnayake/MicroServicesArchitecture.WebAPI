@@ -1,9 +1,8 @@
-﻿using KooBits.Domain.Models;
-using KooBits.Infrastructure.Data;
+﻿using KooBits.MicroServices.UserServices.Interfaces;
+using KooBits.MicroServices.UserServices.Models; 
 using Microsoft.EntityFrameworkCore;
-using System.Data;
 
-namespace KooBits.Infrastructure.Repositories
+namespace KooBits.MicroServices.UserServices.Infrastructure.Repositories
 {
     public class UserRepository: IUserRepository
     {

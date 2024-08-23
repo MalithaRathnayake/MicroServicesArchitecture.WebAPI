@@ -1,12 +1,7 @@
-﻿using KooBits.Application.Interfaces;
-using KooBits.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using KooBits.MicroServices.UserServices.Interfaces;
+using KooBits.MicroServices.UserServices.Models;
 
-namespace KooBits.Application.Services 
+namespace KooBits.MicroServices.UserServices.Services
 {
     public class UserService : IUserService
     {

@@ -1,14 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using KooBits.MicroServices.OrderServices.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using KooBits.Infrastructure.Repositories;
-using KooBits.Domain.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace KooBits.Infrastructure.Configurations
+namespace KooBits.MicroServices.OrderServices.Configurations
 {
     public class OrderEntityConfiguration : IEntityTypeConfiguration<Order>
     {

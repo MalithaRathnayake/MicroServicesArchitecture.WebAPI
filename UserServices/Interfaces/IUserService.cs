@@ -1,9 +1,14 @@
-﻿namespace KooBits.Domain.Models
+﻿using KooBits.MicroServices.UserServices.Models;
+
+namespace KooBits.MicroServices.UserServices.Interfaces
 {
-    public interface IUserRepository
+    public interface IUserService
     {
         Task<User> GetUserByIdAsync(int id);
         Task<IEnumerable<User>> GetAllUsersAsync();
         Task AddUserAsync(User user);
     }
 }
+
+ 
+

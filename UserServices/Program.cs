@@ -1,8 +1,7 @@
-using KooBits.Application.Interfaces;
-using KooBits.Application.Services;
-using KooBits.Domain.Models;
-using KooBits.Infrastructure.Data;
-using KooBits.Infrastructure.Repositories;
+using KooBits.MicroServices.UserServices.Infrastructure;
+using KooBits.MicroServices.UserServices.Infrastructure.Repositories;
+using KooBits.MicroServices.UserServices.Interfaces;
+using KooBits.MicroServices.UserServices.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

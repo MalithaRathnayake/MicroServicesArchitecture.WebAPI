@@ -1,8 +1,9 @@
-﻿using KooBits.Domain.Models;
-using KooBits.Infrastructure.Configurations;
+﻿
+using KooBits.MicroServices.UserServices.Configurations;
+using KooBits.MicroServices.UserServices.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace KooBits.Infrastructure.Data
+namespace KooBits.MicroServices.UserServices.Infrastructure
 {
     public class UserDBContext : DbContext
     {
