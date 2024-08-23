@@ -16,8 +16,8 @@ namespace KooBits.Infrastructure.Configurations
         {
             builder.HasKey(e => e.OrderID);
             builder.Property(e => e.UserId).IsRequired();
-            builder.Property(e => e.Product).IsRequired().HasMaxLength(2);
-            builder.Property(e => e.Quantity).IsRequired();
+            builder.Property(e => e.Product).IsRequired().HasMaxLength(100);
+            builder.Property(e => e.Quantity).IsRequired().HasMaxLength(10);
         }
     }
 }
