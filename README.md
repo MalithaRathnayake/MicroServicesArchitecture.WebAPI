@@ -23,7 +23,9 @@ Instructions :
    User Microservice :  
          GET
          /api/Order
+         
          POST
          /api/Order
+         
          GET
         /api/Order/{id}
