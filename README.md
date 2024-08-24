@@ -9,7 +9,7 @@ Instructions :
 3. Microservice Architecture is implemented in this project, There will be two    	separate .Net Core Web Api projects created as , 
      		KooBits.MicroServices.UserServices,
     		KooBits.MicroServices.OrderService.
-     Both will be contain separate Entityframework core Inmemory DBs.  
+     Both will be contain separate Entityframework core in-memory DBs.  
 
 4.Set  KooBits.MicroServices.UserServices,    		KooBits.MicroServices.OrderService as startup projects and run the solution
 
