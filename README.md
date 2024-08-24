@@ -21,7 +21,8 @@ Instructions :
 
 8.Testing : Once the project started successfully please use Swagger documentaion for testing below Apis,
    
-   User Microservice :  
+   Order Microservice : 
+   Note: User have to be save first before trying to save Order, Saved use Id should be provided when saving an Order.: 
         
          GET
          /api/Order
