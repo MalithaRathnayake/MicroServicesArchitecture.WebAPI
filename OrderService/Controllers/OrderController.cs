@@ -1,8 +1,6 @@
 ﻿using KooBits.MicroServices.OrderServices.Interfaces;
 using KooBits.MicroServices.OrderServices.Models;
-using KooBits.MicroServices.OrderServices.Services;
 using Microsoft.AspNetCore.Mvc;
-using System.Data;
 
 namespace KooBits.MicroServices.OrderService.Controllers
 {

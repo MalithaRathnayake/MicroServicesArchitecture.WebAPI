@@ -1,7 +1,5 @@
 ﻿using KooBits.MicroServices.OrderServices.Interfaces;
 using KooBits.MicroServices.OrderServices.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 
 namespace KooBits.MicroServices.OrderServices.Services

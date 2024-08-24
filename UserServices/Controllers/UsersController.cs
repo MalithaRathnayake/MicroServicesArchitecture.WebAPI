@@ -9,10 +9,11 @@ namespace KooBits.MicroServices.UserServices.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
-
-        public UsersController(IUserService userService)
+        private readonly ILogger<IUserService> _logger;
+        public UsersController(IUserService userService, ILogger<IUserService> logger)
         {
             _userService = userService;
+            _logger = logger;
         }
 
         [HttpGet]
@@ -36,8 +37,17 @@ namespace KooBits.MicroServices.UserServices.Controllers
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
-            await _userService.AddUserAsync(user);
-            return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
+            try
+            {
+                await _userService.AddUserAsync(user);
+                return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Exception occured");
+                return StatusCode(500, "Exception occured , please contact admin");
+            }
+            
         }
     }
 }
