@@ -20,3 +20,12 @@ Instructions :
 7.Added TODO comments to explain assumptions made and suggest project Rewamp ideas.
 
 8.Testing : Once the project started successfully please use Swagger documentaion for testing below Apis,
+   User Microservice :  
+         GET
+         /api/Order
+
+         POST
+         /api/Order
+
+         GET
+        /api/Order/{id}
