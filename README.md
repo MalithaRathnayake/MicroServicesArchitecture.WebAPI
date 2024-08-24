@@ -23,14 +23,14 @@ Instructions :
    
       Users Microservice
  
-      GET
-      /api/Users
+        GET
+        /api/Users
 
-      POST
-      /api/Users
+        POST
+        /api/Users
 
-      GET
-      /api/Users/{id}
+        GET
+        /api/Users/{id}
       
       Order Microservice : 
        Note: User have to be save first before trying to save Order, Saved use Id should be provided when saving an Order.: 
