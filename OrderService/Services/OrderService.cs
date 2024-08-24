@@ -41,7 +41,7 @@ namespace KooBits.MicroServices.OrderServices.Services
                 var url = $"{baseUrl}/{order.UserId}";
 
                 // GET request to check user                                                        
-                var response = await _httpClient.GetAsync(url);
+                var response = await _httpClient.GetAsync(url); //TODO : Need to refactor this code to introduce a common Http client 
                   
                 // Read and return the response content
                 var content = await response.Content.ReadAsStringAsync();
@@ -50,7 +50,10 @@ namespace KooBits.MicroServices.OrderServices.Services
                 int id = (int)jsonObject["id"];
                 if (id != order.UserId)
                 {
-                    throw new InvalidOperationException("Invalid user id");
+                    throw new InvalidOperationException("Invalid user id"); // TODO: Need to introduce an Error Code machanisum here
+                                                                            // either by Enum or Constant (Ex: ERR002 - Invalid user id)
+
+
                 }
 
                 await _orderRepository.AddUserOrderAsync(order);
